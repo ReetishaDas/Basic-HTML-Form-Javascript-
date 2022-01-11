@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>20181CSE0590</title>
+  <script type="text/javascript">
+    function validate() {
+      var u_fname = document.getElementById("t1").value;
+      var u_lname = document.getElementById("t2").value;
+      var u_placename = document.getElementById("t3").value;
+      var u_pincode = document.getElementById("t4").value;
+      var u_phone = document.getElementById("t5").value;
+      var u_email = document.getElementById("t6").value;
+      var u_mobile = document.getElementById("t7").value;
+      var u_pan = document.getElementById("t8").value;
+      var u_debit = document.getElementById("t9").value;
+      var u_cvv = document.getElementById("t10").value;
+      var fnameletters = /^[a-zA-Z]*$/;
+      var lnameletters = /^[a-zA-Z]*$/;
+      // var place ="Mysore";
+      // var pin=
+      var phonenumber = /^[0-9]*$/;
+      var email = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      var mobilenumber = /^[0-9]{10}$/;
+      var pannumber = /^[a-zA-Z0-9]+$/;
+      var debitnumber = /^[0-9]{16}$/;
+      var cvvnumber = /^[0-9]{3}$/;
+
+      if (u_fname == '') {
+        alert('Please enter your first name');
+      } else if (!fnameletters.test(u_fname) && document.getElementById("t1").value.length < 3) {
+        alert('Minimum characters 3');
+      } else if (u_lname == '') {
+        alert('Please enter your Last name');
+      } else if (!lnameletters.test(u_lname)) {
+        alert('Please enter only alphabets');
+      } else if (u_placename == '') {
+        alert('Please enter place name');
+      } else if (u_placename != 'Mysore') {
+        alert('Please enter Only Mysore');
+      } else if (u_pincode == '') {
+        alert('Please enter a pincode');
+      } else if (u_pincode[0] + u_pincode[1] != 66) {
+        alert('Please enter a pincode starting with "66"');
+      } else if (u_phone == '') {
+        alert('Please enter phone number');
+      } else if (!phonenumber.test(u_phone)) {
+        alert('Please enter valid phone number');
+      } else if (u_phone.length < 10 || u_phone.length > 10) {
+        alert('Please enter valid phone number of 10 digits');
+
+      } else if (u_email == '') {
+        alert('Please enter your Email ID');
+      } else if (!email.test(u_email)) {
+        alert('Please enter valid form of Email ID');
+      } else if (u_mobile == '') {
+        alert('Please enter your mobile number');
+      } else if (!mobilenumber.test(u_mobile) && u_mobile.length < 10 || u_mobile.length > 10) {
+        alert('Please enter valid mobile number of 10 digits only');
+      } else if (u_pan == '') {
+        alert('Please enter your PAN Card number');
+      } else if (!pannumber.test(u_pan)) {
+        alert('Please enter valid format of PAN Card number');
+      } else if (u_debit == '') {
+        alert('Please enter your Debit / Credit card number');
+      } else if (!debitnumber.test(u_debit)) {
+        alert('Please enter valid debit / credit number (16 Digits)');
+      } else if (u_cvv == '') {
+        alert('Please enter cvv number');
+      } else if (!cvvnumber.test(u_cvv)) {
+        alert('Please enter only last 3 digits of ur CVV');
+      } else {
+        alert('Thank You for your Patience. PAYMENT SUCCESSFULLY COMPLETED!!!!!!');
+      }
+    }
+
+    function clearForm() {
+      document.getElementById("myForm").reset();
+    }
+  </script>
+</head>
+
+<body bgcolor="#EADEDE">
+  <div id="main">
+    <div class="h-tag">
+      <center>
+        <h1>Online Payment Gateway</h1>
+        <br>
+        <h2>REETISHA DAS - 20181CSE0590</h2>
+      </center>
+    </div>
+    <div class="login">
+
+      <form id="myForm" action="#" style="font-size: 20px;">
+        <table cellspacing="2" align="center" cellpadding="8" border="0">
+          <tr>
+            <td align="center">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" name="first name" placeholder="FirstName" id="t1" />
+            </td>
+            <td align="center">Middle Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" name="middle name" maxlength="15" placeholder="MiddleName" />
+            </td>
+            <td align="center">Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" name="last name" maxlength="15" placeholder="LastName" id="t2" />
+            </td>
+          </tr>
+          <tr>
+            <td align="center">Place:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" name="place" placeholder="Mysore" id="t3" />
+            </td>
+          </tr>
+          <tr>
+            <td align="center">Pincode:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" name="pin" placeholder="Pincode" id="t4" />
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              Phone Number:&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" placeholder="Phone Number" id="t5" name="phone" />
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              Email ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" placeholder="Email" id="t6" name="email" />
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              Mobile Number:&nbsp;&nbsp;&nbsp;
+              <input type="text" placeholder="mobile Number" id="t7" name="mobile" />
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <label for="start">PAN number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <input type="text" placeholder="PAN Number" id="t8" name="pan" />
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              Debit Card:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" placeholder="DebitCard" id="t9" name="debit" />
+            </td>
+            <td align="center">CVV:&nbsp;&nbsp;&nbsp;
+              <input type="text" placeholder="cvv" id="t10" name="cvv" />
+            </td>
+            <td align="center">
+              <label for="place">Type of Card:</label>
+              <select name="type">
+                <option value="VISA">VISA</option>
+                <option value="Master">Master</option>
+                <option value="Rupay">Rupay</option>
+                <option value="American Tourist">American Tourist</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </form>
+
+      <br>
+      <br>
+      <center>
+        <input type="reset" value="Clear Form" id="res" class="btn" onclick="clearForm()" />
+        <input type="submit" value="Payment" id='sub' class="btn" onclick="validate()" />
+      </center>
+
+
+
+
+    </div>
+  </div>
+
+</body>
+
+</html>
